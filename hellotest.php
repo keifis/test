@@ -1,8 +1,12 @@
 <?php
 
+
+
 $link = mysqli_connect("localhost","root","password");
 
-echo $link->info;
+echo $link->client_info;
+
+//echo "hello php";
 
 //mysqli_query("create database if not exists test2 default character set utf8");
 //$result = mysqli_query("show databases");
