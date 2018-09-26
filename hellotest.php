@@ -8,7 +8,7 @@ echo $link->client_info;
 
 //echo "hello php";
 
-mysqli_query("create database if not exists test2 default character set utf8");
+//mysqli_query("create database if not exists test2 default character set utf8");
 $result = mysqli_query("show databases");
 var_dump($result);
 //
