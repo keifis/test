@@ -10,6 +10,7 @@ echo $link->client_info;
 
 mysqli_query("create database if not exists test2 default character set utf8");
 $result = mysqli_query("show databases");
+echo  "result";
 echo $result->num_rows;
 //
 //while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
