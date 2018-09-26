@@ -4,7 +4,7 @@
 
 $link = mysqli_connect("localhost","root","password");
 
-echo $link->client_info;
+//echo $link->client_info;
 
 //echo "hello php";
 
