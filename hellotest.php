@@ -9,7 +9,7 @@ $link = mysqli_connect("localhost","root","password");
 //echo "hello php";
 
 //mysqli_query("create database if not exists test2 default character set utf8");
-$result = mysqli_query("SHOW TABLES");
+$result = mysqli_query("SHOW DATABASES;");
 
 if (!$result) {
     echo "DB Error, could not list tables\n";
