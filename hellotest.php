@@ -13,7 +13,7 @@ if ($link) {
     // 文字化け防止
     mysqli_set_charset($link, 'utf8');
 
-    $query = 'SELECT id, name FROM personal';
+    $query = 'SELECT id, name FROM member';
 
     // クエリを実行します
     $result = mysqli_query($link, $query);
