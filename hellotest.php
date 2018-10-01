@@ -2,7 +2,7 @@
 
 $host     = 'localhost'; // データベースのホスト名又はIPアドレス ※CodeCampでは「localhost」で接続できます
 $username = 'root';  // MySQLのユーザ名
-$passwd   = 'passwd';    // MySQLのパスワード
+$passwd   = 'password';    // MySQLのパスワード
 $dbname   = 'test';    // データベース名
 
 $link = mysqli_connect($host, $username, $passwd, $dbname);
