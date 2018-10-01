@@ -1,36 +1,39 @@
 <?php
 
+$host     = 'localhost'; // データベースのホスト名又はIPアドレス ※CodeCampでは「localhost」で接続できます
+$username = 'root';  // MySQLのユーザ名
+$passwd   = 'passwd';    // MySQLのパスワード
+$dbname   = 'test';    // データベース名
 
+$link = mysqli_connect($host, $username, $passwd, $dbname);
 
-$link = mysqli_connect("localhost","root","password");
+// 接続成功した場合
+if ($link) {
 
-if (!$link) {
-    echo "Error: Unable to connect to MySQL." . PHP_EOL;
-    echo "Debugging errno: " . mysqli_connect_errno() . PHP_EOL;
-    echo "Debugging error: " . mysqli_connect_error() . PHP_EOL;
-    exit;
+    // 文字化け防止
+    mysqli_set_charset($link, 'utf8');
+
+    $query = 'SELECT id, name FROM personal';
+
+    // クエリを実行します
+    $result = mysqli_query($link, $query);
+
+    // 1行ずつ結果を配列で取得します
+    while ($row = mysqli_fetch_array($result)) {
+        print $row['id'];
+        print $row['name'];
+        print "\n";
+    }
+
+    // 結果セットを開放します
+    mysqli_free_result($result);
+
+    // 接続を閉じます
+    mysqli_close($link);
+
+// 接続失敗した場合
+} else {
+    print 'DB接続失敗';
 }
 
-echo "Success: A proper connection to MySQL was made! The my_db database is great." . PHP_EOL;
-echo "Host information: " . mysqli_get_host_info($link) . PHP_EOL;
-
-//echo $link->client_info;
-
-//echo "hello php";
-
-//mysqli_query("create database if not exists test2 default character set utf8");
-$result = mysqli_query("SHOW DATABASES");
-
-if (!$result) {
-    echo "DB Error, could not list tables\n";
-    echo 'MySQL Error: ' . mysqli_error($link);
-    exit;
-}
-//
-var_dump($result);
-//
-//while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
-//    echo $row[0];
-//    echo "<br>";
-//}
 ?>
