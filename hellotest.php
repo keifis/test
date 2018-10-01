@@ -27,7 +27,7 @@ $result = mysqli_query("SHOW DATABASES;");
 //    exit;
 //}
 //
-//var_dump($result);
+var_dump($result);
 //
 //while ($row = mysqli_fetch_array($result, MYSQLI_NUM)) {
 //    echo $row[0];
